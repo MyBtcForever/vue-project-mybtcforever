@@ -1,0 +1,29 @@
+<template>
+  <button class="mint-button" @click="showDialog">
+    <span>MINT</span>
+  </button>
+</template>
+<script>
+export default {
+  methods: {
+    showDialog() {
+      this.$dialog.confirm({
+        title: 'Success',
+        message: 'You have minted!'
+      })
+    }
+  }
+}
+</script>
+<style scoped>
+.mint-button {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  background: rgba(147, 112, 219, 0.2); 
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+</style>
