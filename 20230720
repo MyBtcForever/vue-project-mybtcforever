@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <input
+      type="text"
+      placeholder="输入邮箱地址"
+      class="input" />
+    <button @click="checkInput">确认</button>
+  </div>
+</template>
+<script>
+export default {
+  methods: {
+    checkInput() {
+      // 获取输入框内容
+      let inputVal = this.$refs.input.value;
+      // 如果有输入内容,则弹出提示
+      if (inputVal) {
+        this.$dialog.alert(inputVal + ' 已提交。')
+      } else {
+        // 没有内容则弹出提示
+        this.$dialog.alert('请先输入邮箱,再点击按钮。')  
+      }  
+    }
+  }
+}
+</script>
+<style scoped>
+.input {
+  border-radius: 5px; 
+  padding: 5px 10px;
+}
+button {
+  border-radius: 5px; 
+}
+</style>
+主要功能:
+- 设计一个输入框和按钮组件
+- 输入框有圆角边框样式
+- 按钮也有圆角边框样式
+- 点击按钮时判断输入框是否有内容
+    - 如果有,则弹出对话框提示"xxx 已提交。"
+    - 如果没有,则提示"请先输入邮箱,再点击按钮。"
